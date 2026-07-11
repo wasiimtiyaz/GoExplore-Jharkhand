@@ -16,7 +16,7 @@ console.log("Place:", localStorage.getItem("selectedPlace"));
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/wishlist", {
+        const response = await fetch("https://goexplore-jharkhand.onrender.com/api/wishlist", {
     method: "POST",
     headers: {
         "Content-Type": "application/json",

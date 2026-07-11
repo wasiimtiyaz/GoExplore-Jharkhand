@@ -9,7 +9,7 @@ form.addEventListener("submit", async function (e) {
     const message = document.getElementById("message").value;
 
     try {
-        const res = await fetch("http://localhost:5000/api/contact", {
+        const res = await fetch("https://goexplore-jharkhand.onrender.com/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -26,7 +26,7 @@ form.addEventListener("submit", async (e) => {
 
     try {
 
-        const response = await fetch("http://localhost:5000/api/bookings", {
+        const response = await fetch("https://goexplore-jharkhand.onrender.com/api/bookings", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

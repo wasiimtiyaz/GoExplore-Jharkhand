@@ -154,7 +154,7 @@
         async function updateProfile() {
             const token = localStorage.getItem("token");
 
-            const res = await fetch("http://localhost:5000/api/users/profile", {
+            const res = await fetch("https://goexplore-jharkhand.onrender.com/api/profile", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
