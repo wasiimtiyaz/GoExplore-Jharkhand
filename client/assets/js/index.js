@@ -33,7 +33,7 @@ const cities = [
     {
         id: 6,
         name: "Giridih",
-        image: "assets/images/giridih.jpg",
+        image: "assets/images/Giridih.jpg",
         description: "Famous for Parasnath Hills"
     },
     {
@@ -51,7 +51,7 @@ const cities = [
     {
         id: 9,
         name: "Koderma",
-        image: "assets/images/koderma.jpg",
+        image: "assets/images/Koderma.jpg",
         description: "Mica Capital of India"
     },
     {
@@ -74,7 +74,7 @@ const places = [
         id: 2,
         name: "Hundru Falls",
         city: "Ranchi",
-        image: "assets/images/ranchi/hundruFall-Ranchi.jpg"
+        image: "assets/images/ranchi/HundruFall-Ranchi.jpg"
     },
     {
         id: 3,
@@ -86,7 +86,7 @@ const places = [
         id: 4,
         name: "Baidyanath Temple",
         city: "Deoghar",
-        image: "assets/images/deoghar/BabaDham-Deoghar.jpg"
+        image: "assets/images/Deoghar/BabaDham-Deoghar.jpg"
     },
     {
         id: 5,
@@ -98,7 +98,7 @@ const places = [
         id: 6,
         name: "Mathon Dam",
         city: "Dhanbad",
-        image: "assets/images/dhanbad/MathonDam-Dhn.jpg",
+        image: "assets/images/Dhanbad/MathonDam-Dhn.jpg",
     },
     {
         id: 7,
