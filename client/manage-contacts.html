@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Contacts</title>
+
+    <link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>GoExplore</h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="manage-users.html">👥 Manage Users</a>
+    <a href="manage-bookings.html">📅 Manage Bookings</a>
+    <a href="manage-reviews.html">⭐ Manage Reviews</a>
+    <a href="manage-wishlist.html">❤️ Manage Wishlist</a>
+    <a href="manage-contacts.html">📩 Manage Contacts</a>
+    <a href="manage-places.html">📍 Manage Places</a>
+    <a href="manage-categories.html">📂 Manage Categories</a>
+    <a href="#" onclick="logout()">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Manage Contact Messages</h1>
+
+    <input
+        type="text"
+        id="searchContact"
+        placeholder="Search by name or email..."
+        onkeyup="searchContacts()"
+    >
+
+    <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Name</th>
+
+                <th>Email</th>
+
+                <th>Message</th>
+
+                <th>Date</th>
+
+                <th>Action</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="contactTable"></tbody>
+
+    </table>
+
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/manage-contacts.js"></script>
+
+</body>
+</html>

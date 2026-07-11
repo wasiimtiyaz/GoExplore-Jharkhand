@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Explore Tourism | Category</title>
+    <meta name="description" content="Explore tourist places, hotels, restaurants and more in Jharkhand.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h2>Go-Explore</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+        </nav>
+    </header>
+
+    <section class="hero city-hero">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1 id="categoryTitle">Tourist Places</h1>
+            <p id="categorySubtitle">Discover amazing destinations and services in your selected city.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <h2 id="cityTitle">Jharkhand</h2>
+            <p>Choose any place below to view complete details.</p>
+        </div>
+        <div class="card-container" id="categoryContainer">
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage1" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName1">Loading...</h3>
+                    <p id="placeDescription1">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation1">Jharkhand</span>
+                    <button onclick="openPlace(0)">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage2" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName2">Loading...</h3>
+                    <p id="placeDescription2">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation2">Jharkhand</span>
+                    <button onclick="openPlace(1)">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage3" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName3">Loading...</h3>
+                    <p id="placeDescription3">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation3">Jharkhand</span>
+                    <button onclick="openPlace(2)">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage4" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName4">Loading...</h3>
+                    <p id="placeDescription4">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation4">Jharkhand</span>
+                    <button onclick="openPlace(3)">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage5" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName5">Loading...</h3>
+                    <p id="placeDescription5">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation5">Jharkhand</span>
+                    <button onclick="openPlace(4)">View Details</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image">
+                    <img id="categoryImage6" src="assets/images/places/default.jpg" alt="Place Image">
+                </div>
+                <div class="card-content">
+                    <h3 id="placeName6">Loading...</h3>
+                    <p id="placeDescription6">Please wait while places are loading.</p>
+                    <span class="location" id="placeLocation6">Jharkhand</span>
+                    <button onclick="openPlace(5)">View Details</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Go-Explore Tourism</h3>
+                <p>Explore the beauty of Jharkhand with Go-Explore Tourism.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2026 Go-Explore Tourism. All Rights Reserved.</p>
+    </footer>
+
+    <script src="assets/js/darkmode.js"></script>
+    <script src="assets/js/places-data.js"></script>
+    <script src="assets/js/category.js"></script>
+    <script>
+        function openPlace(index) {
+            const city = new URLSearchParams(window.location.search).get("city");
+            const category = new URLSearchParams(window.location.search).get("category");
+            window.location.href =
+                `place.html?city=${encodeURIComponent(city)}&category=${encodeURIComponent(category)}&index=${index}`;
+        }
+    </script>
+</body>
+</html>

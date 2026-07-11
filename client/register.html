@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Go-Explore Tourism</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: url("assets/images/login-bg.jpg") center center/cover no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .register-box {
+            width: 460px;
+            background: rgba(255, 255, 255, .95);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, .25);
+        }
+
+        .register-box h2 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #118B2F;
+        }
+
+        .register-box h2 i {
+            margin-right: 8px;
+        }
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            font-size: 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 10px;
+            background: #fff;
+            color: #222;
+            transition: .3s;
+        }
+
+        .input-group input::placeholder {
+            color: #666;
+        }
+
+        .input-group input:focus {
+            border-color: #118B2F;
+            box-shadow: 0 0 8px rgba(17, 139, 47, .25);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .checkbox input {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            accent-color: #118B2F;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #118B2F;
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        button:hover {
+            background: #0d6f24;
+        }
+
+        .login-link {
+            margin-top: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .login-link a {
+            color: #118B2F;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .home-link {
+            display: block;
+            margin-top: 18px;
+            text-align: center;
+            color: #118B2F;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .home-link:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: #d32f2f;
+            font-size: 13px;
+            margin-top: 5px;
+        }
+
+        .success {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: 600;
+            color: #118B2F;
+        }
+
+        @media(max-width:500px) {
+            .register-box {
+                width: 95%;
+                padding: 25px;
+            }
+
+            .register-box h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-box">
+        <h2>
+            <i class="fa-solid fa-mountain-sun"></i> Go-Explore Tourism
+        </h2>
+
+        <form id="registerForm">
+            <div class="input-group">
+                <input type="text" id="fullname" placeholder="Full Name">
+                <div class="error" id="nameError"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email">
+                <div class="error" id="emailError"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="phone" placeholder="Phone Number">
+                <div class="error" id="phoneError"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password">
+                <div class="error" id="passwordError"></div>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                <div class="error" id="confirmError"></div>
+            </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="terms">
+                    I agree to the Terms & Conditions
+                </label>
+            </div>
+
+            <button type="submit">
+                Create Account
+            </button>
+            <div class="success" id="successMsg"></div>
+        </form>
+        <div class="login-link">
+            Already have an account?
+            <a href="login.html">
+                Login
+            </a>
+        </div>
+        <a href="index.html" class="home-link">
+            ← Back to Home
+        </a>
+    </div>
+
+    <script src="assets/js/register.js"></script>
+
+</body>
+
+</html>

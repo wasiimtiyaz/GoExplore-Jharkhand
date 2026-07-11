@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Explore Tourism | Place Details</title>
+    <meta name="description"
+        content="View complete information about tourist places in Jharkhand including ratings, reviews, location, facilities and booking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* keep map styling out of inline attributes */
+        .map-frame { border: 0; border-radius: 20px; }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h2>Go-Explore</h2>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="wishlist.html">Wishlist</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">🌙</button>
+        </nav>
+    </header>
+
+    <section class="hero place-hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 id="placeName">Place Name</h1>
+            <p id="placeLocation">Jharkhand</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>Place Information</h2>
+        </div>
+
+        <div class="card">
+            <img id="placeImage" src="assets/images/places/default.jpg" alt="Place Image">
+
+            <div class="card-content">
+                <h2 id="placeTitle">Place Name</h2>
+                <p id="placeDescription">Loading place information...</p>
+
+                <br>
+                <p><strong>⭐ Rating :</strong> <span id="rating">4.8</span>/5</p>
+                <p><strong>🎫 Entry Fee :</strong> <span id="entryFee">Free</span></p>
+                <p><strong>🕒 Timings :</strong> <span id="timing">09:00 AM - 06:00 PM</span></p>
+                <p><strong>📍 Address :</strong> <span id="address">Jharkhand</span></p>
+                <br>
+
+                <a href="booking.html" class="explore-btn" onclick="bookPlace()">Book Now</a>
+                <button class="explore-btn" onclick="addToWishlist()">❤️ Add to Wishlist</button>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+
+        <div class="section-title">
+            <h2>⭐ Ratings & Reviews</h2>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <label for="ratingInput"><strong>Your Rating</strong></label>
+                <br><br>
+
+                <select id="ratingInput">
+                    <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+                    <option value="4">⭐⭐⭐⭐ (4)</option>
+                    <option value="3">⭐⭐⭐ (3)</option>
+                    <option value="2">⭐⭐ (2)</option>
+                    <option value="1">⭐ (1)</option>
+                </select>
+                <br><br>
+                <label for="reviewInput"><strong>Your Review</strong></label>
+                <textarea id="reviewInput" rows="6" placeholder="Write your experience here..."></textarea>
+                <br><br>
+                <button class="explore-btn" onclick="submitReview()">Submit Review</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section light">
+        <div class="section-title">
+            <h2>Visitor Reviews</h2>
+            <p>See what other visitors say about this destination.</p>
+        </div>
+
+        <div id="reviewContainer">
+            <div class="card">
+                <div class="card-content">
+                    <p>
+                        No reviews available yet.
+                        Be the first visitor to share your experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>Location Map</h2>
+        </div>
+
+        <div class="map-container">
+            <iframe id="mapFrame" class="map-frame" title="Location map" src="https://maps.google.com/maps?q=Ranchi&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="450" allowfullscreen loading="lazy" referrerpolicy="no-referrer"></iframe>
+        </div>
+    </section>
+    <section class="section light">
+
+        <div class="section-title">
+            <h2>Facilities</h2>
+            <p>Enjoy the amenities available at this destination.</p>
+        </div>
+
+        <div class="card-container">
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-square-parking"></i></h3>
+                    <h4>Parking</h4>
+                    <p>Safe and spacious parking facility for visitors.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-restroom"></i></h3>
+                    <h4>Washroom</h4>
+                    <p>Clean and hygienic washrooms are available.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-utensils"></i></h3>
+                    <h4>Food Court</h4>
+                    <p>Enjoy local food, snacks and refreshments.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-camera"></i></h3>
+                    <h4>Photography</h4>
+                    <p>Capture unforgettable memories with beautiful scenery.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-shield-heart"></i></h3>
+                    <h4>Security</h4>
+                    <p>24×7 security and visitor assistance available.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-content">
+                    <h3><i class="fa-solid fa-wheelchair"></i></h3>
+                    <h4>Accessibility</h4>
+                    <p>Easy access for senior citizens and differently-abled visitors.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+
+            <div>
+                <h3>Go-Explore Tourism</h3>
+                <p>Explore the natural beauty of Jharkhand with Go-Explore Tourism.</p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="profile.html">Profile</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+            <div>
+                <h3>Follow Us</h3>
+                <div class="social">
+                    <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="X (Twitter)" title="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" aria-label="YouTube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">&copy; 2026 Go-Explore Tourism. All Rights Reserved.</p>
+    </footer>
+    <script src="assets/js/darkmode.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/places-data.js"></script>
+    <script src="assets/js/place.js"></script>
+    <script src="assets/js/wishlist.js"></script>
+    <script src="assets/js/review.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            if (typeof loadPlace === "function") { loadPlace(); }
+            if (typeof loadReviews === "function") { loadReviews(); }
+        });
+    </script>
+</body>
+
+</html>

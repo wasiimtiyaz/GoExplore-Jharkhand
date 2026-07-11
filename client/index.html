@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Explore Tourism | Discover Jharkhand</title>
+    <meta name="description"
+        content="Explore waterfalls, hills, wildlife, temples, heritage and adventure destinations across Jharkhand.">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <i class="fa-solid fa-mountain-sun"></i>
+                <h2>Go-Explore</h2>
+            </div>
+
+            <!-- Navigation -->
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html" class="active">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#cities">
+                        Cities
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html">
+                        About
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html">
+                        Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="my-bookings.html">
+                        My Bookings
+                    </a>
+                </li>
+            </ul>
+
+            <!-- User Buttons -->
+            <div class="nav-buttons">
+                <span id="userName" class="user-name"></span>
+                <a href="login.html" id="loginLink" class="btn login-btn">
+                    Login
+                </a>
+                <a href="register.html" id="registerLink" class="btn register-btn">
+                    Register
+                </a>
+                <button id="logoutBtn" class="btn login-btn" type="button" onclick="logout()" hidden>Logout
+                </button>
+            </div>
+
+            <!-- Dark Mode -->
+            <button class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle Dark Mode">
+                🌙
+            </button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1>
+                Explore the Beauty of Jharkhand
+            </h1>
+            <p>
+                Discover breathtaking waterfalls, lush forests, wildlife,
+                historical monuments, temples, and adventure destinations
+                across Jharkhand.
+            </p>
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search destination, city or tourist place...">
+                <div id="suggestions" class="suggestions"></div>
+                <button id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </button>
+            </div>
+            <a href="#cities" class="explore-btn">
+                Explore Now
+            </a>
+        </div>
+    </section>
+
+    <section id="cities" class="section">
+        <div class="section-title">
+            <h2>
+
+                Featured Cities
+            </h2>
+            <p>
+                Choose your favourite destination and start your journey.
+            </p>
+        </div>
+        <div class="card-container" id="cityContainer">
+            <!-- Dynamic cards from index.js -->
+        </div>
+    </section>
+
+    <section class="section light">
+        <div class="section-title">
+            <h2>
+
+                Popular Tourist Attractions
+            </h2>
+            <p>
+                Explore the most visited tourist destinations of Jharkhand.
+            </p>
+        </div>
+        <div class="card-container" id="placeContainer">
+            <!-- Dynamic cards from places-data.js -->
+        </div>
+    </section>
+
+    <section class="why">
+        <div class="why-box">
+            <i class="fa-solid fa-tree"></i>
+            <h3>Nature</h3>
+            <p>
+                Experience lush green forests, spectacular waterfalls,
+                wildlife sanctuaries and peaceful natural landscapes.
+            </p>
+        </div>
+        <div class="why-box">
+            <i class="fa-solid fa-landmark"></i>
+            <h3>Heritage</h3>
+            <p>
+                Visit famous temples, museums, forts and historical monuments
+                that showcase Jharkhand's rich culture.
+            </p>
+        </div>
+        <div class="why-box">
+            <i class="fa-solid fa-camera"></i>
+            <h3>Photography</h3>
+            <p>
+                Capture unforgettable memories with breathtaking landscapes,
+                hills, rivers and beautiful sunrise views.
+            </p>
+        </div>
+        <div class="why-box">
+            <i class="fa-solid fa-route"></i>
+            <h3>Adventure</h3>
+            <p>
+                Enjoy trekking, camping, boating, nature walks and exciting
+                outdoor adventures across the state.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            <h2>Gallery</h2>
+            <p>
+                Explore some beautiful moments from different places of
+                Jharkhand.
+            </p>
+        </div>
+
+        <div class="gallery">
+            <img src="assets/images/Giridih/ParasnathHill-Giridih.jpg" alt="Parasnath Hill">
+            <img src="assets/images/ramgarh.jpg" alt="Ramgarh">
+            <img src="assets/images/Deoghar/TapovanHill-Deoghar.jpg" alt="Tapovan Hill">
+            <img src="assets/images/Hazaribagh/KonarDam-Hzb.jpg" alt="Konar Dam">
+            <img src="assets/images/Koderma/TilaiyaDam-Koderma.jpg" alt="Tilaiya Dam">
+            <img src="assets/images/Dhanbad/MathonDam-Dhn.jpg" alt="Maithon Dam">
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <h2>
+            What Visitors Say
+        </h2>
+        <div class="testimonial-box">
+            <p>
+                "Jharkhand is one of India's hidden gems.
+                The waterfalls, forests, temples and warm hospitality
+                made our trip truly unforgettable."
+            </p>
+            <h4>
+                — Happy Traveller
+            </h4>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <h2>
+            Subscribe for Travel Updates
+        </h2>
+        <p>
+            Receive travel tips, tourism news and destination updates directly
+            in your inbox.
+        </p>
+        <div class="newsletter-box">
+            <input type="email" placeholder="Enter your email" aria-label="Email Address">
+            <button type="button">
+                Subscribe
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>
+                    Go-Explore Tourism
+                </h3>
+                <p>
+                    Explore the natural beauty of Jharkhand with Go-Explore
+                    Tourism. Your trusted travel companion.
+                </p>
+            </div>
+            <div>
+                <h3>
+                    Quick Links
+                </h3>
+                <a href="index.html">Home</a>
+                <a href="city.html">Cities</a>
+                <a href="category.html">Categories</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div>
+                <h3>
+                    Follow Us
+                </h3>
+                <div class="social">
+                    <a href="#" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <p class="copyright">
+            &copy; 2026 Go-Explore Tourism. All Rights Reserved.
+        </p>
+    </footer>
+
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/auth.js"></script>
+    <script src="assets/js/places-data.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/darkmode.js"></script>
+    <script>
+        const user = getUser();
+        const loggedIn = isLoggedIn();
+        const userName = document.getElementById("userName");
+        const loginLink = document.getElementById("loginLink");
+        const registerLink = document.getElementById("registerLink");
+        const logoutBtn = document.getElementById("logoutBtn");
+        if (loggedIn && user) {
+            userName.textContent = "Hi, " + user.name;
+            loginLink.style.display = "none";
+            registerLink.style.display = "none";
+            logoutBtn.style.display = "inline-block";
+        }
+        else {
+            userName.textContent = "";
+            loginLink.style.display = "inline-block";
+            registerLink.style.display = "inline-block";
+            logoutBtn.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

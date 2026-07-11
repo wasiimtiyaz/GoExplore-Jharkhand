@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GoExplore Admin Dashboard</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>GoExplore</h2>
+
+    <a href="admin.html">🏠 Dashboard</a>
+    <a href="manage-users.html">👥 Manage Users</a>
+    <a href="manage-bookings.html">📅 Manage Bookings</a>
+    <a href="manage-reviews.html">⭐ Manage Reviews</a>
+    <a href="manage-wishlist.html">❤️ Manage Wishlist</a>
+    <a href="manage-contacts.html">📩 Manage Contacts</a>
+    <a href="manage-places.html">📍 Manage Places</a>
+    <a href="manage-categories.html">📂 Manage Categories</a>
+    <a href="#" onclick="logout()">🚪 Logout</a>
+
+</div>
+
+<div class="main">
+
+    <h1>Admin Dashboard</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h2 id="userCount">0</h2>
+            <p>Total Users</p>
+        </div>
+
+        <div class="card">
+            <h2 id="bookingCount">0</h2>
+            <p>Total Bookings</p>
+        </div>
+
+        <div class="card">
+            <h2 id="wishlistCount">0</h2>
+            <p>Total Wishlist</p>
+        </div>
+
+        <div class="card">
+            <h2 id="reviewCount">0</h2>
+            <p>Total Reviews</p>
+        </div>
+
+        <div class="card">
+            <h2 id="contactCount">0</h2>
+            <p>Total Contacts</p>
+        </div>
+
+    </div>
+
+    <h2>Analytics</h2>
+
+    <div class="chart-container">
+        <canvas id="bookingChart"></canvas>
+    </div>
+
+    <div class="analytics-card">
+    <h3>Average Rating</h3>
+    <h1 id="avgRating">0.0 ⭐</h1>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/admin.js"></script>
+
+</body>
+</html>

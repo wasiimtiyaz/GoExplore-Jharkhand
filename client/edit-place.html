@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edit Place</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Edit Place</h2>
+
+<form id="editPlaceForm">
+
+<input
+type="text"
+id="name"
+placeholder="Place Name"
+required>
+
+<input
+type="text"
+id="district"
+placeholder="District"
+required>
+
+<input
+type="text"
+id="category"
+placeholder="Category"
+required>
+
+<input
+type="text"
+id="image"
+placeholder="Image URL">
+
+<input
+type="number"
+step="0.1"
+id="rating"
+placeholder="Rating">
+
+<textarea
+id="description"
+placeholder="Description"
+rows="6"></textarea>
+
+<input
+type="text"
+id="map"
+placeholder="Google Map Link">
+
+<button type="submit">
+Update Place
+</button>
+
+<a href="manage-places.html">
+Back
+</a>
+
+</form>
+
+</div>
+
+<script src="assets/js/auth.js"></script>
+<script src="assets/js/adminAuth.js"></script>
+<script src="assets/js/edit-place.js"></script>
+
+</body>
+</html>
