@@ -14,7 +14,9 @@ exports.createBooking = async (req, res) => {
             date: req.body.date,
             persons: req.body.persons,
             phone: req.body.phone,
-            email: req.body.email
+            email: req.body.email,
+            paymentId: req.body.paymentId,
+paymentStatus: req.body.paymentStatus
         });
 
         res.status(201).json({
@@ -81,6 +83,59 @@ exports.cancelBooking = async (req, res) => {
         res.json({
             success: true,
             message: "Booking cancelled successfully."
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
+};
+
+//Get All Bookings
+exports.getAllBookings = async (req, res) => {
+
+    try {
+
+        const bookings = await Booking.find()
+            .populate("user", "name email")
+            .sort({ createdAt: -1 });
+
+        res.json({
+            success: true,
+            bookings
+        });
+
+    } catch (err) {
+
+        res.status(500).json({
+            success: false,
+            message: err.message
+        });
+
+    }
+
+};
+
+//Approve Booking(Admin)
+exports.approveBooking = async (req, res) => {
+
+    try {
+
+        await Booking.findByIdAndUpdate(
+            req.params.id,
+            {
+                status: "Approved"
+            }
+        );
+
+        res.json({
+            success: true,
+            message: "Booking Approved"
         });
 
     } catch (err) {

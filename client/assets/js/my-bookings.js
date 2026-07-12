@@ -59,6 +59,16 @@ async function loadBookings() {
 
             <p><strong>📧 Email:</strong> ${booking.email}</p>
 
+            <p><strong>💳 Payment:</strong>
+<span style="color:green;font-weight:bold;">
+${booking.paymentStatus}
+</span>
+</p>
+
+<p><strong>Payment ID:</strong>
+${booking.paymentId}
+</p>
+
             <p>
                 <strong>Status:</strong>
 

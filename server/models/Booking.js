@@ -37,7 +37,16 @@ const bookingSchema = new mongoose.Schema(
     type: String,
     default: "Pending"
 
-    }
+    },
+    paymentId: {
+    type: String,
+    default: ""
+},
+
+paymentStatus: {
+    type: String,
+    default: "Pending"
+},
 
 },
 {
