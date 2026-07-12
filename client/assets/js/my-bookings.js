@@ -7,7 +7,7 @@ async function loadBookings() {
     try {
 
         const res = await fetch(
-            "http://goexplore-jharkhand.onrender.com/api/bookings/my",
+            "https://goexplore-jharkhand.onrender.com/api/bookings/my",
             {
                 headers: {
                     Authorization: "Bearer " + token
@@ -118,7 +118,7 @@ async function cancelBooking(id) {
     try {
 
         const res = await fetch(
-            "http://goexplore-jharkhand.onrender.com/api/bookings/" + id,
+            "https://goexplore-jharkhand.onrender.com/api/bookings/" + id,
             {
                 method: "DELETE",
                 headers: {
