@@ -112,9 +112,12 @@ function goBack() {
 
 window.onload = function () {
 
-    loadPlace();
+    if (document.getElementById("placeName")) {
+        loadPlace();
+    }
+
     prepareAnimation();
 
-    console.log("Place Loaded Successfully");
+    console.log("Page Loaded Successfully");
 
 };
