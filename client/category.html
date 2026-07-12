@@ -155,11 +155,16 @@
     <script src="assets/js/category.js"></script>
     <script>
         function openPlace(index) {
-            const city = new URLSearchParams(window.location.search).get("city");
-            const category = new URLSearchParams(window.location.search).get("category");
-            window.location.href =
-                `place.html?city=${encodeURIComponent(city)}&category=${encodeURIComponent(category)}&index=${index}`;
-        }
+
+    const city = localStorage.getItem("selectedCity");
+    const category = localStorage.getItem("selectedCategory");
+
+    const place = tourismData[city][category][index];
+
+    localStorage.setItem("selectedPlace", place.name);
+
+    window.location.href = "place.html";
+}
     </script>
 </body>
 </html>

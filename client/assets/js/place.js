@@ -13,6 +13,9 @@ function loadPlace() {
         return;
     }
 
+    console.log("selectedPlace =", selectedPlace);
+    console.log("placeDatabase[selectedPlace] =", placeDatabase[selectedPlace]);
+
     let place = placeDatabase[selectedPlace];
 
     // Case-insensitive search
