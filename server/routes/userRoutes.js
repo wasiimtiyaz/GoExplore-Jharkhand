@@ -4,6 +4,11 @@ const router = express.Router();
 const authMiddleware = require("../middleware/authMiddleware");
 const { updateProfile } = require("../controllers/userController");
 
+
+console.log("updateProfile =", updateProfile);
+console.log("authMiddleware =", authMiddleware);
+console.log("updateProfile =", updateProfile);
+
 router.put("/profile", authMiddleware, updateProfile);
 
 module.exports = router;
