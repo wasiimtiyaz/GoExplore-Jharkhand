@@ -61,6 +61,7 @@ function loadCity() {
 
 // Open Category
 function openCategory(category) {
+    localStorage.setItem("selectedCity", selectedCity);
     localStorage.setItem("selectedCategory", category);
     window.location.href = "category.html";
 }
