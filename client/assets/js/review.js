@@ -17,7 +17,7 @@ async function submitReview() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/reviews",
+            "https://goexplore-jharkhand.onrender.com/api/reviews",
             {
                 method: "POST",
                 headers: {
@@ -65,7 +65,7 @@ async function loadReviews() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/reviews/" +
+            "https://goexplore-jharkhand.onrender.com/api/reviews/" +
             encodeURIComponent(place)
         );
 
@@ -156,7 +156,7 @@ async function editReview(id, oldRating, oldReview) {
     if (review === null) return;
 
     const response = await fetch(
-        "http://localhost:5000/api/reviews/" + id,
+        "https://goexplore-jharkhand.onrender.com/api/reviews/" + id,
         {
             method: "PUT",
             headers: {
@@ -192,7 +192,7 @@ async function deleteReview(id) {
     if (!confirm("Delete this review?")) return;
 
     const response = await fetch(
-        "http://localhost:5000/api/reviews/" + id,
+        "https://goexplore-jharkhand.onrender.com/api/reviews/" + id,
         {
             method: "DELETE",
             headers: {

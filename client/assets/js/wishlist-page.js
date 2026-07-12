@@ -7,7 +7,7 @@ async function loadWishlist() {
     try {
 
         const response = await fetch(
-            "http://localhost:5000/api/wishlist",
+            "https://goexplore-jharkhand.onrender.com/api/wishlist",
             {
                 headers: {
                     Authorization: "Bearer " + token
@@ -68,7 +68,7 @@ async function removeWishlist(id) {
 
     const response = await fetch(
 
-        "http://localhost:5000/api/wishlist/" + id,
+        "https://goexplore-jharkhand.onrender.com/api/wishlist/" + id,
 
         {
 
