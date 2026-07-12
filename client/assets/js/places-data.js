@@ -5426,4 +5426,3 @@ const placeDatabase = {
         map: "https://maps.google.com/maps?q=Koderma%20Wildlife%20Sanctuary&t=&z=13&ie=UTF8&iwloc=&output=embed",
     }
 };
-window.places = places;
