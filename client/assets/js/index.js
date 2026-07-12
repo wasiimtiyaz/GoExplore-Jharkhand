@@ -74,7 +74,7 @@ const places = [
         id: 2,
         name: "Hundru Falls",
         city: "Ranchi",
-        image: "assets/images/ranchi/HundruFall-Ranchi.jpg"
+        image: "assets/images/Ranchi/HundruFall-Ranchi.jpg"
     },
     {
         id: 3,
