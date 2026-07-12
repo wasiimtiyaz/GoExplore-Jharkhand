@@ -227,7 +227,9 @@ header{
     background:#fff;
     box-shadow:var(--shadow);
     transition:.4s;
+    margin-left: auto;
 }
+
 
 .dark-toggle:hover{
     transform:rotate(180deg);
