@@ -5,7 +5,30 @@ const user = getUser();
 document.getElementById("place").value =
     localStorage.getItem("bookingPlace") || "";
 
+const bookingAmount =
+    Number(localStorage.getItem("bookingAmount")) || 0;
+
+document.getElementById("entryFee").innerText =
+    "₹" + bookingAmount;
+
 document.getElementById("email").value = user.email;
+
+const personsInput = document.getElementById("persons");
+
+// Update Total Amount
+function updateTotal() {
+
+    const persons = Number(personsInput.value) || 1;
+
+    const totalAmount = bookingAmount * persons;
+
+    document.getElementById("bookingAmount").innerText =
+        "₹" + totalAmount;
+}
+
+personsInput.addEventListener("input", updateTotal);
+
+updateTotal();
 
 const form = document.getElementById("bookingForm");
 
@@ -13,12 +36,19 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
+    const persons = Number(document.getElementById("persons").value) || 1;
+
+    const totalAmount = bookingAmount * persons;
+
     const booking = {
+
         place: document.getElementById("place").value,
         date: document.getElementById("date").value,
-        persons: document.getElementById("persons").value,
+        persons: persons,
         phone: document.getElementById("phone").value,
-        email: document.getElementById("email").value
+        email: document.getElementById("email").value,
+        amount: totalAmount
+
     };
 
     try {
@@ -27,16 +57,17 @@ form.addEventListener("submit", async (e) => {
         const orderRes = await fetch(
             "https://goexplore-jharkhand.onrender.com/api/payment/create-order",
             {
-                method: "POST"
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    amount: totalAmount
+                })
             }
         );
 
-        console.log("Status:", orderRes.status);
-
-        const text = await orderRes.text();
-        console.log("Response:", text);
-
-        const orderData = JSON.parse(text);
+        const orderData = await orderRes.json();
 
         if (!orderData.success) {
             alert("Unable to create payment order.");
@@ -49,15 +80,12 @@ form.addEventListener("submit", async (e) => {
             amount: orderData.order.amount,
             currency: orderData.order.currency,
             name: "Go-Explore Tourism",
-            description: "Tour Booking",
+            description: booking.place,
             order_id: orderData.order.id,
 
             handler: async function (response) {
 
                 try {
-
-                    console.log("Payment Success");
-                    console.log(response);
 
                     // Verify Payment
                     const verify = await fetch(
@@ -73,16 +101,14 @@ form.addEventListener("submit", async (e) => {
 
                     const verifyData = await verify.json();
 
-                    console.log("Verify:", verifyData);
-
                     if (!verifyData.success) {
                         alert("Payment verification failed.");
                         return;
                     }
 
-                    // Save Booking
                     const token = localStorage.getItem("token");
 
+                    // Save Booking
                     const bookingRes = await fetch(
                         "https://goexplore-jharkhand.onrender.com/api/bookings",
                         {
@@ -91,23 +117,22 @@ form.addEventListener("submit", async (e) => {
                                 "Content-Type": "application/json",
                                 Authorization: "Bearer " + token
                             },
-                           body: JSON.stringify({
-    ...booking,
-    paymentId: response.razorpay_payment_id,
-    paymentStatus: "Paid"
-})
+                            body: JSON.stringify({
+                                ...booking,
+                                paymentId: response.razorpay_payment_id,
+                                paymentStatus: "Paid"
+                            })
                         }
                     );
 
                     const bookingData = await bookingRes.json();
-
-                    console.log("Booking:", bookingData);
 
                     if (bookingData.success) {
 
                         alert("✅ Payment Successful! Booking Confirmed.");
 
                         localStorage.removeItem("bookingPlace");
+                        localStorage.removeItem("bookingAmount");
 
                         window.location.href = "my-bookings.html";
 
@@ -119,7 +144,7 @@ form.addEventListener("submit", async (e) => {
 
                 } catch (err) {
 
-                    console.error("Handler Error:", err);
+                    console.error(err);
                     alert("Payment verification failed.");
 
                 }
@@ -138,7 +163,7 @@ form.addEventListener("submit", async (e) => {
 
     } catch (err) {
 
-        console.error("Payment Error:", err);
+        console.error(err);
         alert("Unable to start payment.");
 
     }

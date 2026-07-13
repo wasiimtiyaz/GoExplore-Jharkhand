@@ -1,52 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Trip | Go-Explore</title>
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
 
-<div class="profile">
+    <div class="profile">
 
-    <h2>Book Your Trip</h2>
+        <h2>Book Your Trip</h2>
 
-    <form id="bookingForm">
+        <form id="bookingForm">
 
-        <label for="place">Place Name</label>
-        <input type="text" id="place" placeholder="Place Name" readonly>
+            <!-- Place Name -->
+            <label for="place">Place Name</label>
+            <input
+                type="text"
+                id="place"
+                placeholder="Place Name"
+                readonly>
 
-        <br><br>
+            <br><br>
 
-        <label for="date">Travel Date</label>
-        <input type="date" id="date" required>
+            <!-- Travel Date -->
+            <label for="date">Travel Date</label>
+            <input
+                type="date"
+                id="date"
+                required>
 
-        <br><br>
+            <br><br>
 
-        <label for="persons">Number of Persons</label>
-        <input type="number" id="persons" placeholder="Number of Persons" min="1" required>
+            <!-- Number of Persons -->
+            <label for="persons">Number of Persons</label>
+            <input
+                type="number"
+                id="persons"
+                placeholder="Number of Persons"
+                min="1"
+                value="1"
+                required>
 
-        <br><br>
+            <br><br>
 
-        <label for="phone">Phone Number</label>
-        <input type="text" id="phone" placeholder="Phone Number" required>
+            <!-- Phone -->
+            <label for="phone">Phone Number</label>
+            <input
+                type="text"
+                id="phone"
+                placeholder="Phone Number"
+                required>
 
-        <br><br>
+            <br><br>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Email" required>
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Email"
+                readonly>
 
-        <br><br>
+            <br><br>
 
-        <button type="submit" class="btn register-btn">Pay & Book Now</button>
+            <hr>
 
-    </form>
+            <h3>Payment Summary</h3>
 
-</div>
+            <table style="width:100%; font-size:16px; margin:10px 0;">
 
-<script src="assets/js/auth.js"></script>
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script src="assets/js/booking.js"></script>
+                <tr>
+                    <td>Entry Fee (Per Person)</td>
+                    <td style="text-align:right;">
+                        <strong id="entryFee">₹0</strong>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Number of Persons</td>
+                    <td style="text-align:right;">
+                        <strong id="personCount">1</strong>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><strong>Total Amount</strong></td>
+                    <td style="text-align:right;">
+                        <strong
+                            id="bookingAmount"
+                            style="color:#16a34a;font-size:22px;">
+                            ₹0
+                        </strong>
+                    </td>
+                </tr>
+
+            </table>
+
+            <hr>
+
+            <button
+                type="submit"
+                class="btn register-btn"
+                style="width:100%;">
+
+                Pay & Book Now
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <script src="assets/js/auth.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="assets/js/booking.js"></script>
+
 </body>
+
 </html>

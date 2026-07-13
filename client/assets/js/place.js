@@ -52,8 +52,18 @@ function loadPlace() {
    
 }
  // Save for Booking Page
-   function bookPlace() {
-    localStorage.setItem("bookingPlace", selectedPlace);
+function bookPlace() {
+
+    const place = placeDatabase[selectedPlace];
+
+    localStorage.setItem("bookingPlace", place.name);
+
+    localStorage.setItem(
+        "bookingAmount",
+        parseInt(place.fee.replace(/[^\d]/g, ""))
+    );
+
+    window.location.href = "booking.html";
 }
 
 // Share Button

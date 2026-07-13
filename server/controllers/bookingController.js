@@ -9,15 +9,17 @@ exports.createBooking = async (req, res) => {
         console.log("Body:", req.body);
 
         const booking = await Booking.create({
-            user: req.user.id,
-            place: req.body.place,
-            date: req.body.date,
-            persons: req.body.persons,
-            phone: req.body.phone,
-            email: req.body.email,
-            paymentId: req.body.paymentId,
-paymentStatus: req.body.paymentStatus
-        });
+    user: req.user.id,
+    place: req.body.place,
+    date: req.body.date,
+    persons: req.body.persons,
+    phone: req.body.phone,
+    email: req.body.email,
+    amount: req.body.amount,
+    paymentId: req.body.paymentId,
+    paymentStatus: req.body.paymentStatus,
+    status: "Pending"
+});
 
         res.status(201).json({
             success: true,
