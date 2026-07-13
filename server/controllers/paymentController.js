@@ -8,6 +8,7 @@ const razorpay = new Razorpay({
 exports.createOrder = async (req, res) => {
 
     try {
+        console.log("Received body:", req.body);
         console.log("Received amount:", req.body.amount);
         const amount = Number(req.body.amount);
 
