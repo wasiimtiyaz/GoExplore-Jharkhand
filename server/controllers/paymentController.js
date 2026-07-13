@@ -6,9 +6,13 @@ const razorpay = new Razorpay({
 });
 
 exports.createOrder = async (req, res) => {
+
     try {
+        console.log("Received amount:", req.body.amount);
+        const amount = Number(req.body.amount);
+
         const options = {
-            amount: 50000, // ₹500 in paise
+            amount: amount * 100,
             currency: "INR",
             receipt: "booking_" + Date.now()
         };
@@ -21,6 +25,7 @@ exports.createOrder = async (req, res) => {
         });
 
     } catch (err) {
+
         res.status(500).json({
             success: false,
             message: err.message
